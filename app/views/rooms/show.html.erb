@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@room.picture_url, width: '100%') if @room.picture.present? %>
+  </div>
+
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @room.name %></p>
+    <p><b>Description: </b><%= @room.description %></p>
+    <p>
+      <%= link_to 'Edit', edit_room_path(@room) %> |
+      <%= link_to 'Destroy', @room, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', rooms_path %>
+    </p>
+  </div>
+</div>
